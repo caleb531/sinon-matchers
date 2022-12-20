@@ -27,7 +27,6 @@
     "dist"
   ],
   "peerDependencies": {
-    "jest": ">=24.0.0",
     "sinon": ">=7.0.0"
   },
   "dependencies": {
