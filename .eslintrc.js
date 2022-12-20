@@ -3,24 +3,23 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    "jest/globals": true
+    'jest/globals': true
   },
-  extends: ["airbnb-base", "plugin:prettier/recommended"],
-  plugins: ["jest"],
+  plugins: ['jest'],
   globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: 'module'
   },
   rules: {
-    "jest/no-disabled-tests": "warn",
-    "jest/no-focused-tests": "error",
-    "jest/no-identical-title": "error",
-    "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error",
-    "prettier/prettier": "error",
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
+    'comma-dangle': ['error', 'never']
   }
 };
