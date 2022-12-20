@@ -1,10 +1,13 @@
-[![NPM version](https://img.shields.io/npm/v/sinon-matchers.svg)](https://www.npmjs.com/package/sinon-matchers)
-[![Downloads](https://img.shields.io/npm/dm/sinon-matchers.svg)](https://www.npmjs.com/package/sinon-matchers)
-[![Known Vulnerabilities](https://snyk.io//test/github/djkf/sinon-matchers/badge.svg?targetFile=package.json)](https://snyk.io//test/github/djkf/sinon-matchers?targetFile=package.json)
-
 # sinon-matchers
 
-sinon-matchers is a collection of assertions for using the mocking library Sinon.js with Jest.
+sinon-matchers is a collection of assertions for using the mocking library
+Sinon.js with most any testing framework that supports `expect.extend`
+(e.g. Jest, Playwright, and Vitest).
+
+This project was created as a fork of the excellent
+[jest-sinon](https://github.com/djkf/jest-sinon) because, while it worked
+seamlessly with Jest, was not compatible with testing frameworks like Playwright
+due to Playwright's lack of a global `expect` object. Therefore, 
 
 ### Example
 
@@ -25,13 +28,10 @@ The assertions: `toHaveBeenCalledTimes`, `toThrow`, `toReturnWith`, `toHaveBeenC
 
 ```js
 const foo = sinon.spy();
-const bar = jest.fn();
 
 foo();
-bar();
 
 expect(foo).toHaveBeenCalled(); // true
-expect(bar).toHaveBeenCalled(); // true
 ```
 
 ## Why?
@@ -64,24 +64,65 @@ yarn add -D sinon-matchers
 
 Add `sinon-matchers` to your Jest `setupFilesAfterEnv` configuration.
 
-```json
-"jest": {
-  "setupFilesAfterEnv": ["sinon-matchers"]
-}
-```
-
-### Jest 23 or below
-
-```json
-"jest": {
-  "setupTestFrameworkScriptFile": "./testSetup.js"
-}
+```js
+// jest.config.js
+export default {
+  // ...
+  setupFilesAfterEnv: "./testSetup.js"
+};
 ```
 
 ```js
 // testSetup.js
+const matchers = require('sinon-matchers');
+expect.extend(matchers);
+```
 
-require('sinon-matchers');
+### Jest 23 or below
+
+```js
+// jest.config.js
+export default {
+  // ...
+  setupTestFrameworkScriptFile: "./testSetup.js"
+};
+```
+
+```js
+// testSetup.js
+const matchers = require('sinon-matchers');
+
+expect.extend(matchers);
+```
+
+### Playwright
+
+```js
+// test/global-setup.js
+import { expect } from '@playwright/test';
+import matchers from 'sinon-matchers';
+
+expect.extend(matchers);
+```
+
+### Vitest
+
+```js
+// vite.config.js
+export default {
+  // ...
+  test: {
+    setupFiles: ['test/setupTests.ts'],
+  }
+}
+```
+
+```js
+// test/setupTests.js
+import { expect } from 'vitest'
+import matchers from 'sinon-matchers';
+
+expect.extend(matchers);
 ```
 
 ## Usage
