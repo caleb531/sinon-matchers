@@ -1,9 +1,9 @@
 {
-  "name": "jest-sinon",
+  "name": "sinon-matchers",
   "version": "1.1.0",
-  "description": "Jest assertions for the mocking library Sinon.js",
-  "main": "dist/jest-sinon.cjs.js",
-  "module": "dist/jest-sinon.esm.js",
+  "description": "Assertions for the mocking library Sinon.js that work with most any testing framework",
+  "main": "dist/sinon-matchers.cjs.js",
+  "module": "dist/sinon-matchers.esm.js",
   "license": "MIT",
   "keywords": [
     "jest",
@@ -68,6 +68,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/djkf/jest-sinon.git"
+    "url": "https://github.com/caleb531/sinon-matchers.git"
   }
 }

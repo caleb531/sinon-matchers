@@ -1,10 +1,10 @@
-[![NPM version](https://img.shields.io/npm/v/jest-sinon.svg)](https://www.npmjs.com/package/jest-sinon)
-[![Downloads](https://img.shields.io/npm/dm/jest-sinon.svg)](https://www.npmjs.com/package/jest-sinon)
-[![Known Vulnerabilities](https://snyk.io//test/github/djkf/jest-sinon/badge.svg?targetFile=package.json)](https://snyk.io//test/github/djkf/jest-sinon?targetFile=package.json)
+[![NPM version](https://img.shields.io/npm/v/sinon-matchers.svg)](https://www.npmjs.com/package/sinon-matchers)
+[![Downloads](https://img.shields.io/npm/dm/sinon-matchers.svg)](https://www.npmjs.com/package/sinon-matchers)
+[![Known Vulnerabilities](https://snyk.io//test/github/djkf/sinon-matchers/badge.svg?targetFile=package.json)](https://snyk.io//test/github/djkf/sinon-matchers?targetFile=package.json)
 
-# Jest-Sinon
+# sinon-matchers
 
-Jest-Sinon is a collection of assertions for using the mocking library Sinon.js with Jest.
+sinon-matchers is a collection of assertions for using the mocking library Sinon.js with Jest.
 
 ### Example
 
@@ -21,7 +21,7 @@ expect(foo.calledWith(bar)).toBeTruthy;
 expect(foo).toHaveBeenCalledWith(bar);
 ```
 
-The assertions: `toHaveBeenCalledTimes`, `toThrow`, `toReturnWith`, `toHaveBeenCalled` and `toHaveBeenCalledWith` clash with the in-built `Jest` mocking framework. `Jest-Sinon` will try and detect which type of spy is being used and use the correct assertion. You should be able to use both mocking libraries in parallel.
+The assertions: `toHaveBeenCalledTimes`, `toThrow`, `toReturnWith`, `toHaveBeenCalled` and `toHaveBeenCalledWith` clash with the in-built `Jest` mocking framework. `sinon-matchers` will try and detect which type of spy is being used and use the correct assertion. You should be able to use both mocking libraries in parallel.
 
 ```js
 const foo = sinon.spy();
@@ -49,24 +49,24 @@ Ultimately, it usually comes down to your own preferences and needs.
 With npm:
 
 ```
-npm install --save-dev jest-sinon
+npm install --save-dev sinon-matchers
 ```
 
 With yarn:
 
 ```
-yarn add -D jest-sinon
+yarn add -D sinon-matchers
 ```
 
 ## Setup
 
 ### Jest 24+
 
-Add `Jest-Sinon` to your Jest `setupFilesAfterEnv` configuration.
+Add `sinon-matchers` to your Jest `setupFilesAfterEnv` configuration.
 
 ```json
 "jest": {
-  "setupFilesAfterEnv": ["jest-sinon"]
+  "setupFilesAfterEnv": ["sinon-matchers"]
 }
 ```
 
@@ -81,12 +81,12 @@ Add `Jest-Sinon` to your Jest `setupFilesAfterEnv` configuration.
 ```js
 // testSetup.js
 
-require('jest-sinon');
+require('sinon-matchers');
 ```
 
 ## Usage
 
-`Jest-Sinon` adds a number of assertions to help test `Sinon.js` Spies, Mocks and Stubs. Below is a list of currently implemented assertions.
+`sinon-matchers` adds a number of assertions to help test `Sinon.js` Spies, Mocks and Stubs. Below is a list of currently implemented assertions.
 
 #### `.toHaveBeenAlwaysCalledOn(obj)`
 
