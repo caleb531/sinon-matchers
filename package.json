@@ -1,6 +1,6 @@
 {
   "name": "sinon-matchers",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Assertions for the mocking library Sinon.js that work with most any testing framework",
   "main": "dist/sinon-matchers.cjs.js",
   "module": "dist/sinon-matchers.esm.js",
