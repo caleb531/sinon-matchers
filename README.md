@@ -5,9 +5,11 @@ Sinon.js with most any testing framework that supports `expect.extend`
 (e.g. Jest, Playwright, and Vitest).
 
 This project was created as a fork of the excellent
-[jest-sinon](https://github.com/djkf/jest-sinon) because, while it worked
-seamlessly with Jest, was not compatible with testing frameworks like Playwright
-due to Playwright's lack of a global `expect` object. Therefore, 
+[jest-sinon](https://github.com/djkf/jest-sinon) package because, while it
+worked seamlessly with Jest, was not compatible with testing frameworks like
+Playwright due to Playwright's lack of a global `expect` object. Therefore, this
+package exists to expose jest-sinon's matchers in a way that's agnostic to the
+testing framework you use.
 
 ### Example
 
