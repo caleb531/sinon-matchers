@@ -68,7 +68,7 @@ Add `sinon-matchers` to your Jest `setupFilesAfterEnv` configuration.
 // jest.config.js
 export default {
   // ...
-  setupFilesAfterEnv: "./testSetup.js"
+  setupFilesAfterEnv: './testSetup.js'
 };
 ```
 
@@ -84,7 +84,7 @@ expect.extend(matchers);
 // jest.config.js
 export default {
   // ...
-  setupTestFrameworkScriptFile: "./testSetup.js"
+  setupTestFrameworkScriptFile: './testSetup.js'
 };
 ```
 
@@ -112,14 +112,14 @@ expect.extend(matchers);
 export default {
   // ...
   test: {
-    setupFiles: ['test/setupTests.ts'],
+    setupFiles: ['test/setupTests.ts']
   }
-}
+};
 ```
 
 ```js
 // test/setupTests.js
-import { expect } from 'vitest'
+import { expect } from 'vitest';
 import matchers from 'sinon-matchers';
 
 expect.extend(matchers);
